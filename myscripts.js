@@ -12,22 +12,22 @@ function operate(num1, num2, operator) {
 
     switch(operator) {
         case '+':
-        output = num1 + num2;
+        output = add(num1, num2);
         break;
 
         case '-': 
-        output = num1 - num2;
+        output = subtract(num1, num2);
         break;
 
         case '*':
-        output = num1 * num2;
+        output = multiply(num1, num2);
         break;
 
         case '/':
         if (num1 === 0 || num2 === 0) {
             "Can't divide by 0"
         } else {
-        output = num1 / num2;
+        output = divide(num1, num2);
         break;
         }
     }
