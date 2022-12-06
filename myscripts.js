@@ -1,6 +1,18 @@
+
+const buttons = document.querySelectorAll(".numbtn")
+const buttonAllClear = document.querySelector("#allClear");
+const buttonClear = document.querySelector("#clear");
+const buttonSubtract = document.querySelector("#buttonSubtract");
+const buttonDivide = document.querySelector("#buttonDivide");
+const buttonAdd = document.querySelector("#buttonAdd");
+const buttonMultiply = document.querySelector("#buttonMultiply");
+const buttonDot = document.querySelector("#buttonDot");
+const equals = document.querySelector("#equals");
+let display = document.querySelector("#display");
+
 /* calculator options*/
 
-const add = (num1, num2) => num1 + num2; 
+const add = (num1, num2) => num1 + num2;
 const subtract = (num1, num2) => num1 - num2;
 const multiply = (num1, num2) => num1 * num2;
 const divide = (num1, num2) => num1 / num2;
@@ -33,6 +45,17 @@ function operate(num1, num2, operator) {
     }
     return output;
 }
+
+/* on click save the number clicked in the display div*/
+buttons.forEach((button) => {
+let val = button.value;
+button.addEventListener('click', function(e)  {
+display.textContent += button.value;
+});
+
+});
+
+
 
 
 
