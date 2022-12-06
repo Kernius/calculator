@@ -1,0 +1,40 @@
+#calculator {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid black;
+    width:30vw;
+    margin:auto;
+    height:35vw;
+}
+
+#content {
+    display:flex;
+    flex-direction: column;
+
+    align-items:center;
+}
+
+#display {
+    margin-bottom:2vw;
+    border:2px solid black;
+    height:5vw;
+    width:25vw;
+    font-size:1.5vw;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+button {
+    width:4vw;
+    height:4vw;
+    margin:0.2vw;
+}
+
+#equal, #clear, #allClear {
+    width:8.6vw;
+}
+
