@@ -51,10 +51,7 @@ function operate(num1, num2, operator) {
 function populateDisplay() {
     buttons.forEach((button) => {
     button.addEventListener('click', function(e)  {
-        nums = display.textContent += button.value;
-        numso = parseInt(nums);
-console.log(typeof numso)
-        
+        nums = display.textContent += button.value;      
 });
 });
 }
@@ -63,10 +60,11 @@ populateDisplay();
 
 function addButton() {
     buttonAdd.addEventListener('click', () => {
-        
+       display.textContent = "+"
     });
 }
 
+addButton();
 
 
 
