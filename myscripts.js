@@ -47,13 +47,29 @@ function operate(num1, num2, operator) {
 }
 
 /* on click save the number clicked in the display div*/
-buttons.forEach((button) => {
-let val = button.value;
-button.addEventListener('click', function(e)  {
-display.textContent += button.value;
+    let mums = "";
+function populateDisplay() {
+    buttons.forEach((button) => {
+    button.addEventListener('click', function(e)  {
+        nums = display.textContent += button.value;
+        numso = parseInt(nums);
+console.log(typeof numso)
+        
 });
+});
+}
 
-});
+populateDisplay();
+
+function addButton() {
+    buttonAdd.addEventListener('click', () => {
+        
+    });
+}
+
+
+
+
 
 
 
