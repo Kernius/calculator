@@ -82,46 +82,81 @@ function startCalculation() {
 
 /*calculation functions with different operators*/
 
+buttonAdd.addEventListener('click', addButton);
+
 function addButton() {
-    buttonAdd.addEventListener('click', () => {
         chosenOperator = "+";
         sNum1 = sNums;
         num1 = parseInt(sNum1);
         display.textContent = "";
-    });
 }
-addButton();
+
+buttonSubtract.addEventListener('click', subtractButton);
 
 function subtractButton() {
-    buttonSubtract.addEventListener('click', () => {
         chosenOperator = "-";
         sNum1 = sNums;
         num1 = parseInt(sNum1);
         display.textContent = "";
-    });
 }
-subtractButton();
+
+buttonMultiply.addEventListener('click', multiplyButton);
 
 function multiplyButton() {
-    buttonMultiply.addEventListener('click', () => {
         chosenOperator = "*";
         sNum1 = sNums;
         num1 = parseInt(sNum1);
         display.textContent = "";
-    });
 }
-multiplyButton();
+
+buttonDivide.addEventListener('click', divideButton);
 
 function divideButton() {
-    buttonDivide.addEventListener('click', () => {
         chosenOperator = "/";
         sNum1 = sNums;
         num1 = parseInt(sNum1);
         display.textContent = "";
-    });
 }
-divideButton();
 
+
+/* buttons to clear the display variables*/
+
+buttonAllClear.addEventListener('click', clearDisplay);
+
+function clearDisplay() {
+    sNums = "";
+    sNum1 = "";
+    sNum2 = "";
+    num1 = "";
+    num2 = "";
+    total = "";
+    chosenOperator = "";
+    display.textContent = "";
+}
+
+buttonClear.addEventListener('click', deleteDigit);
+
+function deleteDigit() {
+    display.textContent = display.textContent.slice(0, -1);
+    if (sNums !== "") {
+        sNums = sNums.toString().split('').slice(0, -1).join('');
+    } 
+    if (sNum1 !== "") {
+        sNum1 = sNum1.slice(0, -1);
+    }
+    if (sNum2 !== "") {
+        sNum2 = sNum2.slice(0, -1);
+    }
+    if (num1 !== "") {
+        num1.toString().split('').slice(0, -1).join('');
+        num1 = num1 = parseInt(num1);
+    }
+    if (num2 !== "") {
+        num2.toString().split('').slice(0, -1).join('');
+        num2 = num2 = parseInt(num2);
+    }
+
+}
 
 
 
