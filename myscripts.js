@@ -18,9 +18,9 @@ const multiply = (num1, num2) => num1 * num2;
 const divide = (num1, num2) => num1 / num2;
 
 /* runs one of the functions above depending on the input*/
-
+let output = 0;
 function operate(num1, num2, operator) {
-    let output = 0;
+    
 
     switch(operator) {
         case '+':
@@ -47,23 +47,43 @@ function operate(num1, num2, operator) {
 }
 
 /* on click save the number clicked in the display div*/
-    let mums = "";
+    let sNums = "";
+    let sNum1 = "";
+    let sNum2 = "";
+    let num1 = "";
+    let num2 = "";
+    let total = "";
+    let chosenOperator = "";
+
+
 function populateDisplay() {
     buttons.forEach((button) => {
     button.addEventListener('click', function(e)  {
-        nums = display.textContent += button.value;      
+    sNums = display.textContent += button.value; 
 });
 });
 }
-
 populateDisplay();
+
+
+equals.addEventListener('click', startCalculation);
+
+function startCalculation() {
+    sNum2 = sNums
+    num2 = parseInt(sNum2);
+    total = display.textContent = operate(num1, num2, chosenOperator)
+    sNums = total;
+}
+
 
 function addButton() {
     buttonAdd.addEventListener('click', () => {
-       display.textContent = "+"
+        chosenOperator = "+";
+        sNum1 = sNums;
+        num1 = parseInt(sNum1);
+        display.textContent = "";
     });
 }
-
 addButton();
 
 
