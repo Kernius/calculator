@@ -55,21 +55,20 @@ function operate(num1, num2, operator) {
     let num2 = "";
     let total = "";
     let chosenOperator = "";
+    let finalResult = "";
 
 /* save the numbers chosen in the variable and in the calculators display*/
 
-
-function populateDisplay() {
+function clickDisplay() {
     buttons.forEach((button) => {
     button.addEventListener('click', function(e)  {
     sNums = display.textContent += button.value; 
 });
 });
 }
-populateDisplay();
+clickDisplay();
 
 /* runs the calculation code when equals button is pressed*/
-
 
 equals.addEventListener('click', startCalculation);
 
@@ -78,6 +77,7 @@ function startCalculation() {
     num2 = parseInt(sNum2);
     total = display.textContent = operate(num1, num2, chosenOperator)
     sNums = total;
+    finalResult = total;
 }
 
 /*calculation functions with different operators*/
@@ -85,37 +85,61 @@ function startCalculation() {
 buttonAdd.addEventListener('click', addButton);
 
 function addButton() {
+        let parsedDisplay = parseInt(display.textContent);
+    if (num1 !== "" && finalResult === "") {
+        total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
+        sNums = total;
+    }
         chosenOperator = "+";
         sNum1 = sNums;
         num1 = parseInt(sNum1);
         display.textContent = "";
+        finalResult = "";
 }
 
 buttonSubtract.addEventListener('click', subtractButton);
 
 function subtractButton() {
+        let parsedDisplay = parseInt(display.textContent);
+    if (num1 !== "" && finalResult === "") {
+        total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
+        sNums = total;
+    }
         chosenOperator = "-";
         sNum1 = sNums;
         num1 = parseInt(sNum1);
         display.textContent = "";
+        finalResult = "";
 }
 
 buttonMultiply.addEventListener('click', multiplyButton);
 
 function multiplyButton() {
+        let parsedDisplay = parseInt(display.textContent);
+    if (num1 !== "" && finalResult === "") {
+        total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
+        sNums = total;
+    }
         chosenOperator = "*";
         sNum1 = sNums;
         num1 = parseInt(sNum1);
         display.textContent = "";
+        finalResult = "";
 }
 
 buttonDivide.addEventListener('click', divideButton);
 
 function divideButton() {
+      let parsedDisplay = parseInt(display.textContent);
+    if (num1 !== "" && finalResult === "") {
+        total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
+        sNums = total;
+    }
         chosenOperator = "/";
         sNum1 = sNums;
         num1 = parseInt(sNum1);
         display.textContent = "";
+        finalResult = "";
 }
 
 
