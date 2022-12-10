@@ -142,6 +142,19 @@ function divideButton() {
         finalResult = "";
 }
 
+/* add dot on click, and prevent pressing dot if one already exists in the display*/
+
+buttonDot.addEventListener('click', preventDot);
+
+function preventDot() {
+    if (display.textContent.includes(".")) {
+        return;
+    } else {
+    display.textContent += ".";
+    }
+}
+
+
 
 /* buttons to clear the display variables*/
 
