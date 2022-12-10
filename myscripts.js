@@ -142,7 +142,7 @@ function divideButton() {
         finalResult = "";
 }
 
-/* add dot on click, and prevent pressing dot if one already exists in the display*/
+/* add dot on click, don't add dot if one already exists in the display*/
 
 buttonDot.addEventListener('click', preventDot);
 
@@ -169,6 +169,7 @@ function clearDisplay() {
     total = "";
     chosenOperator = "";
     display.textContent = "";
+    output = 0;
 }
 
 buttonClear.addEventListener('click', deleteDigit);
