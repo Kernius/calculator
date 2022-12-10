@@ -75,9 +75,13 @@ equals.addEventListener('click', startCalculation);
 function startCalculation() {
     sNum2 = sNums
     num2 = parseFloat(sNum2);
+    if (num2 === 0 && chosenOperator === "/") {
+        display.textContent = "ERROR! Can't divide by 0!"
+    } else {
     total = display.textContent = operate(num1, num2, chosenOperator)
     sNums = total;
     finalResult = total;
+    }
 }
 
 /*calculation functions with different operators*/
@@ -87,6 +91,10 @@ buttonAdd.addEventListener('click', addButton);
 function addButton() {
         let parsedDisplay = parseFloat(display.textContent);
     if (num1 !== "" && finalResult === "") {
+        if (parsedDisplay === 0 && chosenOperator === "/") {
+            display.textContent = "ERROR! Can't divide by 0!"
+            return;
+        }
         total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
         sNums = total;
     }
@@ -102,6 +110,10 @@ buttonSubtract.addEventListener('click', subtractButton);
 function subtractButton() {
         let parsedDisplay = parseFloat(display.textContent);
     if (num1 !== "" && finalResult === "") {
+        if (parsedDisplay === 0 && chosenOperator === "/") {
+            display.textContent = "ERROR! Can't divide by 0!"
+            return;
+        }
         total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
         sNums = total;
     }
@@ -117,6 +129,10 @@ buttonMultiply.addEventListener('click', multiplyButton);
 function multiplyButton() {
         let parsedDisplay = parseFloat(display.textContent);
     if (num1 !== "" && finalResult === "") {
+        if (parsedDisplay === 0 && chosenOperator === "/") {
+            display.textContent = "ERROR! Can't divide by 0!"
+            return;
+        }
         total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
         sNums = total;
     }
@@ -132,6 +148,10 @@ buttonDivide.addEventListener('click', divideButton);
 function divideButton() {
       let parsedDisplay = parseFloat(display.textContent);
     if (num1 !== "" && finalResult === "") {
+        if (parsedDisplay === 0) {
+            display.textContent = "ERROR! Can't divide by 0!"
+            return;
+        }
         total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
         sNums = total;
     }
