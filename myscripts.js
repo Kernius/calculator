@@ -74,7 +74,7 @@ equals.addEventListener('click', startCalculation);
 
 function startCalculation() {
     sNum2 = sNums
-    num2 = parseInt(sNum2);
+    num2 = parseFloat(sNum2);
     total = display.textContent = operate(num1, num2, chosenOperator)
     sNums = total;
     finalResult = total;
@@ -85,14 +85,14 @@ function startCalculation() {
 buttonAdd.addEventListener('click', addButton);
 
 function addButton() {
-        let parsedDisplay = parseInt(display.textContent);
+        let parsedDisplay = parseFloat(display.textContent);
     if (num1 !== "" && finalResult === "") {
         total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
         sNums = total;
     }
         chosenOperator = "+";
         sNum1 = sNums;
-        num1 = parseInt(sNum1);
+        num1 = parseFloat(sNum1);
         display.textContent = "";
         finalResult = "";
 }
@@ -100,14 +100,14 @@ function addButton() {
 buttonSubtract.addEventListener('click', subtractButton);
 
 function subtractButton() {
-        let parsedDisplay = parseInt(display.textContent);
+        let parsedDisplay = parseFloat(display.textContent);
     if (num1 !== "" && finalResult === "") {
         total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
         sNums = total;
     }
         chosenOperator = "-";
         sNum1 = sNums;
-        num1 = parseInt(sNum1);
+        num1 = parseFloat(sNum1);
         display.textContent = "";
         finalResult = "";
 }
@@ -115,14 +115,14 @@ function subtractButton() {
 buttonMultiply.addEventListener('click', multiplyButton);
 
 function multiplyButton() {
-        let parsedDisplay = parseInt(display.textContent);
+        let parsedDisplay = parseFloat(display.textContent);
     if (num1 !== "" && finalResult === "") {
         total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
         sNums = total;
     }
         chosenOperator = "*";
         sNum1 = sNums;
-        num1 = parseInt(sNum1);
+        num1 = parseFloat(sNum1);
         display.textContent = "";
         finalResult = "";
 }
@@ -130,14 +130,14 @@ function multiplyButton() {
 buttonDivide.addEventListener('click', divideButton);
 
 function divideButton() {
-      let parsedDisplay = parseInt(display.textContent);
+      let parsedDisplay = parseFloat(display.textContent);
     if (num1 !== "" && finalResult === "") {
         total = display.textContent = operate(num1, parsedDisplay, chosenOperator)
         sNums = total;
     }
         chosenOperator = "/";
         sNum1 = sNums;
-        num1 = parseInt(sNum1);
+        num1 = parseFloat(sNum1);
         display.textContent = "";
         finalResult = "";
 }
