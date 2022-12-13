@@ -1,4 +1,3 @@
-
 const buttons = document.querySelectorAll(".numbtn")
 const buttonAllClear = document.querySelector("#allClear");
 const buttonClear = document.querySelector("#clear");
@@ -10,6 +9,7 @@ const buttonDot = document.querySelector("#buttonDot");
 const equals = document.querySelector("#equals");
 let display = document.querySelector("#display");
 
+
 /* calculator options*/
 
 const add = (num1, num2) => num1 + num2;
@@ -18,6 +18,7 @@ const multiply = (num1, num2) => num1 * num2;
 const divide = (num1, num2) => num1 / num2;
 
 /* runs one of the functions above depending on the operator*/
+
 let output = 0;
 function operate(num1, num2, operator) {
     
@@ -65,7 +66,8 @@ function clickDisplay() {
         if (result === total && chosenOperator === "") {
             clearDisplay();
         }
-    sNums = display.textContent += button.value; 
+    sNums = display.textContent += button.value;
+    charLimit();
         
 });
 });
@@ -258,7 +260,6 @@ document.addEventListener('keydown', (e) => {
     sNums = display.textContent += e.key;
     }
     charLimit();
-    console.log(display.textContent.length);
 });
 }
 keyPress();
