@@ -87,8 +87,6 @@ function preventDot() {
     }
 }
 
-
-
 /* runs the calculation code when equals button is pressed*/
 
 equals.addEventListener('click', startCalculation);
