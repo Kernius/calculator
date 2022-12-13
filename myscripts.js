@@ -55,14 +55,18 @@ function operate(num1, num2, operator) {
     let num2 = "";
     let total = "";
     let chosenOperator = "";
-    let finalResult = "";
+    let result = " ";
 
 /* save the numbers chosen in the variable and in the calculators display*/
 
 function clickDisplay() {
     buttons.forEach((button) => {
     button.addEventListener('click', function(e)  {
+        if (result === total && chosenOperator === "") {
+            clearDisplay();
+        }
     sNums = display.textContent += button.value; 
+        
 });
 });
 }
@@ -80,7 +84,8 @@ function startCalculation() {
     } else {
     total = display.textContent = operate(num1, num2, chosenOperator)
     sNums = total;
-    finalResult = total;
+    result = total;
+    chosenOperator = "";
     }
 }
 
@@ -90,7 +95,7 @@ buttonAdd.addEventListener('click', addButton);
 
 function addButton() {
         let parsedDisplay = parseFloat(display.textContent);
-    if (num1 !== "" && finalResult === "") {
+    if (num1 !== "" && result === "") {
         if (parsedDisplay === 0 && chosenOperator === "/") {
             display.textContent = "ERROR! Can't divide by 0!"
             return;
@@ -102,14 +107,14 @@ function addButton() {
         sNum1 = sNums;
         num1 = parseFloat(sNum1);
         display.textContent = "";
-        finalResult = "";
+        result = "";
 }
 
 buttonSubtract.addEventListener('click', subtractButton);
 
 function subtractButton() {
         let parsedDisplay = parseFloat(display.textContent);
-    if (num1 !== "" && finalResult === "") {
+    if (num1 !== "" && result === "") {
         if (parsedDisplay === 0 && chosenOperator === "/") {
             display.textContent = "ERROR! Can't divide by 0!"
             return;
@@ -121,14 +126,14 @@ function subtractButton() {
         sNum1 = sNums;
         num1 = parseFloat(sNum1);
         display.textContent = "";
-        finalResult = "";
+        result = "";
 }
 
 buttonMultiply.addEventListener('click', multiplyButton);
 
 function multiplyButton() {
         let parsedDisplay = parseFloat(display.textContent);
-    if (num1 !== "" && finalResult === "") {
+    if (num1 !== "" && result === "") {
         if (parsedDisplay === 0 && chosenOperator === "/") {
             display.textContent = "ERROR! Can't divide by 0!"
             return;
@@ -140,14 +145,14 @@ function multiplyButton() {
         sNum1 = sNums;
         num1 = parseFloat(sNum1);
         display.textContent = "";
-        finalResult = "";
+        result = "";
 }
 
 buttonDivide.addEventListener('click', divideButton);
 
 function divideButton() {
       let parsedDisplay = parseFloat(display.textContent);
-    if (num1 !== "" && finalResult === "") {
+    if (num1 !== "" && result === "") {
         if (parsedDisplay === 0) {
             display.textContent = "ERROR! Can't divide by 0!"
             return;
@@ -159,7 +164,7 @@ function divideButton() {
         sNum1 = sNums;
         num1 = parseFloat(sNum1);
         display.textContent = "";
-        finalResult = "";
+        result = "";
 }
 
 /* add dot on click, don't add dot if one already exists in the display*/
@@ -216,8 +221,40 @@ function deleteDigit() {
 
 }
 
+/* keyboard functionality*/
 
+function keyPress() {
 
-
-
+document.addEventListener('keydown', (e) => {
+    if (e.key === "+") {
+        addButton();
+        return;
+    } if (e.key === "-") {
+        subtractButton();
+        return;
+    } if (e.key === "*") {
+        multiplyButton();
+        return;
+    } if (e.key === "/") {
+        divideButton();
+        return;
+    } if (e.key === "=" || e.key === "Enter") {
+        startCalculation();
+        return;
+    } if (e.key === "Backspace") {
+        deleteDigit();
+        return;
+    } if (e.key === ".") {
+        preventDot();
+        return;
+    }
+    
+    if (result === total && chosenOperator === "") {
+    clearDisplay();
+    } else {
+    sNums = display.textContent += e.key;
+    }
+});
+}
+keyPress();
 
