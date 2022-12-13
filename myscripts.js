@@ -226,7 +226,10 @@ function deleteDigit() {
 function keyPress() {
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === "+") {
+    if (e.key !== "+" && e.key !== "-" && e.key !== "*" && e.key !== "/" && e.key !== "Enter" && e.key !== "Backspace" && e.key !== "." && e.key !== "=" && e.key !== "0" && e.key !== "1" && e.key !== "2" && e.key !== "3" && e.key !== "4" && e.key !== "5" && e.key !== "6" && e.key !== "7" && e.key !== "8" && e.key !== "9" ) {
+        return;
+    }
+      if (e.key === "+") {
         addButton();
         return;
     } if (e.key === "-") {
@@ -254,7 +257,14 @@ document.addEventListener('keydown', (e) => {
     } else {
     sNums = display.textContent += e.key;
     }
+    charLimit();
+    console.log(display.textContent.length);
 });
 }
 keyPress();
 
+/* limit maximum character in a display*/
+
+function charLimit() {
+        display.textContent = display.textContent.substring(0, 26);
+    }
