@@ -22,7 +22,6 @@ const divide = (num1, num2) => num1 / num2;
 let output = 0;
 function operate(num1, num2, operator) {
     
-
     switch(operator) {
         case '+':
         output = add(num1, num2);
