@@ -74,6 +74,21 @@ function clickDisplay() {
 }
 clickDisplay();
 
+/* add dot on click, don't add dot if one already exists in the display*/
+
+buttonDot.addEventListener('click', preventDot);
+
+function preventDot() {
+    if (display.textContent.includes(".")) {
+        return;
+    } else {
+    display.textContent += ".";
+    result = " ";
+    }
+}
+
+
+
 /* runs the calculation code when equals button is pressed*/
 
 equals.addEventListener('click', startCalculation);
@@ -169,17 +184,7 @@ function divideButton() {
         result = "";
 }
 
-/* add dot on click, don't add dot if one already exists in the display*/
 
-buttonDot.addEventListener('click', preventDot);
-
-function preventDot() {
-    if (display.textContent.includes(".")) {
-        return;
-    } else {
-    display.textContent += ".";
-    }
-}
 
 
 
